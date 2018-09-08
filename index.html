@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NFCPS Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/logo.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/design.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+   .countdown {
+    display: table-cell;
+    font-weight: normal;
+    background: #111;
+}
+.countdown .itemCd {
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+    font-family: 'Open Sans', cursive;
+    font-weight: 700;
+    font-size: 160px;
+    line-height: 180px;
+    text-align: center;
+    color: #B7B7B7;
+    border-radius: 10px;
+    margin: 50px 10px 50px 0;
+    padding: 0 10px;
+    background: #2A2A2A;
+    background: -webkit-linear-gradient(#2A2A2A, #000);
+    background: linear-gradient(#2A2A2A, #000);
+    overflow: hidden;
+}
+.countdown .itemCd-ss {
+    font-size: 50px;
+    line-height: 70px;
+}
+.countdown .itemCd:after {
+    content: '';
+    display: block;
+    height: 1px;
+    border-top: 3px solid #111;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+.countdown .label {
+    text-transform: uppercase;
+    display: block;
+    position: absolute;
+    font-family: 'Open Sans', cursive;
+    font-weight: 700;
+    line-height: normal;
+    right: 6px;
+    bottom: 4px;
+    font-size: 14px;
+    color: #B9B9B9;
+}
+.countdown .itemCd-hh .label,
+.countdown .itemCd-mm .label,
+.countdown .itemCd-ss .label {
+    display: none;
+}
+
+/* COUNTDOWN-ALT-1 */
+/* ----------------------------------------------------------------------------------------- */
+.countdown-alt-1 {
+    display: block;
+    font-size: 0;  /* Hack for inline and inline-block extra markup generated spaces */
+    margin: 100px 0;
+    color: #000;
+}
+.countdown-alt-1 .itemCd {
+    position: relative;
+}
+.countdown-alt-1 .dd,
+.countdown-alt-1 .hh-1,
+.countdown-alt-1 .hh-2,
+.countdown-alt-1 .mm-1,
+.countdown-alt-1 .mm-2,
+.countdown-alt-1 .ss-1,
+.countdown-alt-1 .ss-2 {
+    font-family: 'Righteous', cursive;
+    background: #F6F6F6;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 60px;
+    margin: 1px 2px;
+    min-width: 40px;
+    padding: 5px 16px;
+    text-align: center;
+}
+.countdown-alt-1 .hh-1,
+.countdown-alt-1 .hh-2,
+.countdown-alt-1 .mm-1,
+.countdown-alt-1 .mm-2,
+.countdown-alt-1 .ss-1,
+.countdown-alt-1 .ss-2 {
+    width: 40px;
+    max-width: 40px;
+}
+.countdown-alt-1 .label {
+    font-style: italic;
+    text-transform: capitalize;
+    background: #F6F6F6;
+    border-radius: 5px;
+    font-size: 12px;
+    margin: 1px 2px;
+    padding: 2px 5px;
+    position: absolute;
+    left: 0;
+    bottom: -44px;
+}
+.countdown-alt-1 .separator-dd,
+.countdown-alt-1 .separator {
+    color: #FFF;
+    font-size: 40px;
+    position: relative;
+}
+
+/* COUNTDOWN-ALT-2 - Inspiration http://goo.gl/hRfsc */
+/* ----------------------------------------------------------------------------------------- */
+.countdown-alt-2 {
+    font-size: 0;  /* Hack for inline and inline-block extra markup generated spaces */
+    display: block;
+    overflow: auto;
+    padding: 20px 0;
+    margin: 50px 0;
+    font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
+    color: #333;
+    -webkit-transform: skew(-2deg, -2deg);
+    transform: skew(-2deg, -2deg);
+}
+.countdown-alt-2 .itemCd {
+    display: block;
+    float: left;
+    position: relative;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 36px 20px 10px 20px;
+    margin: 0 10px;
+    min-width: 100px;
+    max-width: 100px;
+    text-align: center;
+    background: #FFF;
+    border: 2px solid #FFF;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.countdown-alt-2 .dd,
+.countdown-alt-2 .hh-1,
+.countdown-alt-2 .hh-2,
+.countdown-alt-2 .mm-1,
+.countdown-alt-2 .mm-2,
+.countdown-alt-2 .ss-1,
+.countdown-alt-2 .ss-2 {
+    font: italic;
+    text-shadow: 1px 1px 10px #FFF, 1px 1px 3px #333;
+}
+.countdown-alt-2 .label {
+    font-weight: normal;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    width: 120px;
+    padding: 5px 10px;
+    background: #0B81BC;
+    color: #FFF;
+}
+            </style>
+</head>
+<body>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand center" href="/nfcps"><img height="29px" src="img/logo.png"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#ourvalues">OUR VALUES</a></li>
+                    <li><a href="#reach-us">REACH US</a></li>
+                    <li><a href="/convention">Register for Convention</a></li>
+                </ul>
+                </div>
+            </div>
+    </nav>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+<!-- Make sure that the images added here are of the same size -->
+               
+                <div class="item active">
+                <img src="img/big_god.jpg" alt="NFCPS">
+                </div>
+                
+                <div class="item">
+                <img src="img/bold_faith.jpg" alt="NFCPS">
+                </div>
+                
+                <div class="item">
+                <img src="img/grace.jpg" alt="NFCPS">
+                </div>
+                
+                <div class="item">
+                <img src="img/colossians.jpg" alt="NFCPS">
+                </div>
+                
+                <div class="item">
+                <img src="img/jesus.jpg" alt="NFCPS">
+                </div>
+                
+                <div class="item">
+                <img src="img/rooted.jpg" alt="NFCPS">
+                </div>
+                
+                <div class="item">
+                <img src="img/success_journey.jpg" alt="NFCPS">
+                </div>
+                
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <div class="header-anchor">
+            <p>Welcome to the official website of the National Fellowship of Christian Pharmacy Students</p>
+        </div>
+    
+        </div>
+    <div  class="container-fluid">
+        <div  class="row">
+            
+         <!--Start left column-->
+            <div class="col-sm-8">
+ <div class="row">
+      <div class="countdown">
+                <!-- Valid global date and time string -->
+                <div>
+                        <time>2016-05-25T14:00:00+0100</time>
+                </div><!-- Paris (winter) -->
+<h1 style="font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif; color:#fff;">Countdown to 2016 Convention</h1>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/jquery.countdown.js"></script>
+        <script>
+        window.jQuery(function ($) {
+            "use strict";
+
+            $('time').countDown({
+                with_separators: false
+            });
+            $('.alt-1').countDown({
+                css_class: 'countdown-alt-1'
+            });
+            $('.alt-2').countDown({
+                css_class: 'countdown-alt-2'
+            });
+
+        });
+        </script>
+            </div>
+</div>
+                <div class="row">
+                    <div class="col-sm-8 row">
+                        <p><a href="/audio/Firmly Rooted in Christ.mp3" style="font-size:20px;margin:10px">Download the Convention song here</a></p>
+                    </div>
+                    <div id="about" class="col-sm-8">
+                        <h2>About NFCPS</h2>
+                        <h4><strong>NFCPS is short for National Fellowship of Christian Pharmacy Students</strong></h4>
+                        <p>NFCPS is a christian body which embodies all pharmacy students in 17 tertiary institutions across Nigeria.
+                            We are a body of united pharmacy students spiritually, academically, professionally, morally and socially. NFCPS
+                            was set up on 29th March 1990 at OAU Ile-ife with representatives from all pharmacy schools in Nigeria to bring pharmacy
+                            students together.</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="glyphicon glyphicon-flag logo"></span>
+                    </div>
+                    <div id="ourvalues" class="col-sm-12"><!--The col-sm-12 needs to be added to make this div align properly -->
+                        <h2>Our Values</h2>
+                        <h4><strong>Mission and Vision:</strong></h4>
+                        <p>In order to achieve our mission to pharmacy students and the community, we organize:
+                            <ul>
+                                <li>Community Outreach</li>
+                                <li>Career Seminars</li>
+                                <li>Academic Seminars</li>
+                                <li>Prison Outreach</li>
+                                <li>Hospital Outreah</li>
+                                <li>Zonal Pharmaceutical Outreaches</li>
+                                <li>Magazine Production and Continuous Publication</li>
+                                <li>National Convention</li>
+                            </ul>
+                        </p>
+                        <h4><strong>Aims and Objectives</strong></h4>
+                        <ul>
+                            <li>To build members into spiritual maturity, responsible Christian Pharmacist who would provide true professional and selfless service to humanity
+                            </li><li>To promote friendship, corporation, unity and serve as a forum for addressing a wide range of issues with Pharmaceutical and Spiritual implications
+                            </li><li>To promote and encourage the spread of the gospel of our Lord Jesus Christ
+                            </li><li>To encourage hard work and excellence among members</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <!--Start school images--> 
+                <div class="row text-center">    
+                    <h1 class="bg-yellow">NFCPS Schools</h1>
+                    <div class="col-sm-12">
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="#"><img src="img/delsu.jpg" alt="delsu"></a>
+                                        <h3 class="carousel-caption">DELSU</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="unn"><img src="img/unn.jpg" alt="UNN"></a>
+                                        <h3 class="carousel-caption">UNN</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="#"><img src="img/oou.jpg" alt="OOU"></a>
+                                        <h3 class="carousel-caption">OOU</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="#"><img src="img/unigombe.jpg" alt="UNIGOMBE"></a>
+                                        <h3 class="carousel-caption">UNIGOMBE</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="#"><img src="img/uniuyo.jpg" alt="UNIUYO"></a>
+                                        <h3 class="carousel-caption">UNIUYO</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="#"><img src="img/abu.jpg" alt="ABU"></a>
+                                        <h3 class="carousel-caption">ABU</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="#"><img src="img/igbinedion.jpg" alt="igbinedion"></a>
+                                        <h3 class="carousel-caption">IGBINEDION</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <a href="#"><img src="img/uniben.jpg" alt="uniben"></a>
+                                        <h3 class="carousel-caption">UNIBEN</h3>
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                        <div class="col-sm-4 mywell">
+                            <!--Start Carousel-->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                    </div>
+                                </div>
+                            <!--End carousel-->
+                        </div>
+                    </div>
+                </div>
+             <!--End school images-->
+            </div>
+         <!--End left column-->
+         
+         <!--Start right column-->
+            <div class="sidebar col-sm-4">
+                
+                <div class="well">
+                    <h3>News</h3>
+                    <div class="well">
+                        <h4>National Convention</h4>
+                        <p>25th to 29th of May, 2016 all christian pharmacy students will be converging at University of Nigeria, Nsukka for the annual National Convention of NFCPS.
+                            This will be the 25th of it's kind. It will run with the theme "Rooted Firmly in Christ", Colossians 2:7.</p>
+                    </div>
+
+
+                        <div class="fb-page" data-href="https://www.facebook.com/nfcpsnigeria" data-tabs="timeline" data-width="400" data-height="700" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/nfcpsnigeria">
+                                    <a href="https://www.facebook.com/nfcpsnigeria">
+                                        Our Facebook Feeds
+                                    </a>
+                                </blockquote>
+                            </div>
+                        </div>
+                        
+                </div>
+                <div class="well">
+                    <h3>Visit Our Blogs</h3>
+                    <div class="list-group">
+                        <a href="unn" class="list-group-item">University of Nigeria, Nsukka</a>
+                        <a href="abu" class="list-group-item">Ahmadu Bello University, Zaria</a>
+                        <a href="delsu" class="list-group-item">Delta State University, Abraka</a>
+                        <a href="igbinedion" class="list-group-item">Igbeniedion University</a>
+                        <a href="madona" class="list-group-item">Madona University</a>
+                        <a href="oau" class="list-group-item">OAU Ile-Ife</a>
+                        <a href="oou" class="list-group-item">OOU</a>
+                        <a href="udus" class="list-group-item">Usman Danfodio University, Sokoto</a>
+                        <a href="unigombe" class="list-group-item">University of Gombe</a>
+                        <a href="ui" class="list-group-item">University of Ibadan</a>
+                        <a href="uniben" class="list-group-item">University of Bennin</a>
+                        <a href="uniilorin" class="list-group-item">University of Ilorin</a>
+                        <a href="unijos" class="list-group-item">University of Jos</a>
+                        <a href="unilag" class="list-group-item">University of Lagos</a>
+                        <a href="unimaid" class="list-group-item">University of Maiduguri</a>
+                        <a href="uniport" class="list-group-item">University of Portharcourt</a>
+                        <a href="uniuyo" class="list-group-item">University of Uyo</a>
+                        <a href="nau" class="list-group-item">Nnamdi Azikiwe University</a>
+                        <a href="ndu" class="list-group-item">Niger Delta University</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <footer class="container-fluid text-center">
+        <div class="row">
+            
+            <div id="reach-us" class="col-sm-3">
+                <h6 style="color:#000;font-size: 16px; font-weight:bold;">REACH US</h6>
+                <span class="glyphicon glyphicon-earphone"></span> +234 703 869 1920 <br/>
+                <span class="glyphicon glyphicon-envelope"></span> mail@nfcps.org.ng <br/>
+                <span class="glyphicon glyphicon-map-marker"></span> NFCPS Secretariat, Faculty of Pharmaceutical Sciences, University of Nigeria Nsukka
+                <br/><br/>
+                <a href="https://www.facebook.com/nfcpsnigeria" style="color:white;font-size:14px;"><img src="img/fb-icon.png"/>https://www.facebook.com/nfcpsnigeria</a> 
+            </div>
+            
+            <div class="col-sm-9">
+                <p style="color:black">NFCPS 2015</p>
+                <div class="visitor-count">
+                    <p>Visitors Count:</p>
+                    <img alt="Hit counter" src="counter.php" />
+                </div>
+            </div>
+      
+        </div>
+    </footer>
+</body>
+</html>

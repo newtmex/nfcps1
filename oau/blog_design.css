@@ -1,0 +1,25 @@
+body * {
+    box-sizing: border-box;
+}
+
+#header {
+    margin-top: 50px; 
+}
+#top_row {
+    background-color:  rebeccapurple;
+}
+#body{
+    margin: 3px;
+}
+#content, #right_col {
+    margin-top: 0;
+    padding-top: 0px;
+    margin-bottom: 0;
+    padding-bottom: 0px;
+}
+#right_col{
+    background-color:  red;
+}
+footer {
+    background-color: green;
+}
